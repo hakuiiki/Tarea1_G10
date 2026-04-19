@@ -16,6 +16,7 @@ public abstract class Producto {
 
     /**
      * Constructor de la clase Producto
+     * Inicializa los atributos numero de serie y tipo que todo producto debe poseer
      * @param numSerie Numero de serie del producto
      * @param producto Tipo de producto
      */
@@ -26,7 +27,7 @@ public abstract class Producto {
 
     /**
      * Getter del numero de serie del producto
-     * @return numero de serie
+     * @return numero de serie como int
      */
     public int getNumSerie(){
         return numSerie;
@@ -34,7 +35,7 @@ public abstract class Producto {
 
     /**
      * Getter de la opcion de producto
-     * @return tipo de producto
+     * @return tipo de producto como OpcProducto
      */
     public OpcProducto getProducto(){
         return producto;
@@ -42,7 +43,7 @@ public abstract class Producto {
 
     /**
      * Getter del precio del producto, hace llamado a metodo dentro de enum OpcProducto
-     * @return precio de la opcion de producto
+     * @return precio de la opcion de producto como int
      */
     public int getPrecio(){
         return producto.getPrecio();
@@ -50,7 +51,7 @@ public abstract class Producto {
 
     /**
      * Metodo abstracto que simboliza el consumo del producto, varía según de que producto se trate
-     * @return sabor del producto
+     * @return sabor del producto como string con el nombre del producto
      */
     public abstract String consumir();
 }

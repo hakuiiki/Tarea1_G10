@@ -1,27 +1,24 @@
 package org.utils;
 
 /**
- * Enumeracion de las opciones disponibles de productos en el expendedor
- *
- * Cada constante contiene:
- * - un tag asociado al producto
- * - el precio asociado al producto
+ * Enumeracion de las opciones disponibles de productos en el expendedor, cada producto cumple con tener un tag asociado y un precio respectivo
+ * los cuales estan representados en las constantes definidas dentro de la Enumeración
  */
 public enum OpcProducto{
 
-    /** Bebida CocaCola*/
+    /** Bebida CocaCola con tag 1 y precio $1500*/
     COCA_COLA(1,1500),
 
-    /** Bebida Sprite*/
+    /** Bebida Sprite con tag 2 y precio $1000*/
     SPRITE(2,1000),
 
-    /** Bebida Fanta*/
+    /** Bebida Fanta con tag 3 y precio $800*/
     FANTA(3,800),
 
-    /** Dulce Snickers*/
+    /** Dulce Snickers con tag 4 y precio $700*/
     SNICKERS(4,700),
 
-    /** Dulce Super8*/
+    /** Dulce Super8 con tag 5 y precio $300*/
     SUPER8(5,300);
 
     /** Tag identificador del producto*/
@@ -32,6 +29,7 @@ public enum OpcProducto{
 
     /**
      * Constructor del enum OpcProducto
+     * Se encarga de asignar el tag y precio a cada constante definida previamente
      * @param tag tag identificador del producto
      * @param precio valor del producto
      */
@@ -42,7 +40,7 @@ public enum OpcProducto{
 
     /**
      * Getter del tag del producto
-     * @return tag del producto
+     * @return tag del producto como int
      */
     public int getTag(){
         return tag;
@@ -50,7 +48,7 @@ public enum OpcProducto{
 
     /**
      * Getter del precio del producto
-     * @return valor del producto
+     * @return valor del producto como int
      */
     public int getPrecio(){
         return precio;
