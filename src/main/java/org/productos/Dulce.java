@@ -1,10 +1,12 @@
-package org.utils;
+package org.productos;
+
+import org.utils.OpcProducto;
 
 /**
  * Clase abstracta que representa a los distintos dulces en el expendedor
  * Hereda atributos de clase Producto
  */
-public abstract class Dulce extends Producto{
+public abstract class Dulce extends Producto {
 
     /**
      * Constructor de la clase Dulce

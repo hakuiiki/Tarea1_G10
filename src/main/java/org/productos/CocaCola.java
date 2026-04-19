@@ -1,9 +1,11 @@
-package org.utils;
+package org.productos;
+
+import org.utils.OpcProducto;
 
 /**
  * Clase que representa una bebida CocaCola en el expendedor
  */
-public class CocaCola extends Bebida{
+public class CocaCola extends Bebida {
 
     /**
      * Constructor de la clase CocaCola, de enum OpcProducto se extrae su tag y precio

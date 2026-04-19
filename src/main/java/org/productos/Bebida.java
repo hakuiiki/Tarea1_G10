@@ -1,4 +1,6 @@
-package org.utils;
+package org.productos;
+
+import org.utils.OpcProducto;
 
 /**
  * Clase abstracta que representa a las distintas bebidas en el expendedor

@@ -1,4 +1,6 @@
-package org.utils;
+package org.productos;
+
+import org.utils.OpcProducto;
 
 /**
  * Clase que representa un dulce Super8 en el expendedor

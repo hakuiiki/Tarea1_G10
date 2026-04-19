@@ -1,4 +1,6 @@
-package org.utils;
+package org.productos;
+
+import org.utils.OpcProducto;
 
 /**
  * Clase que representa una bebida Fanta en el expendedor

@@ -1,4 +1,6 @@
-package org.utils;
+package org.productos;
+
+import org.utils.OpcProducto;
 
 /**
  * Clase abstracta que se utiliza polimorficamente para representar un producto dentro del expendedor

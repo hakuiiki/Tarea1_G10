@@ -1,4 +1,4 @@
-package org.utils;
+package org.main;
 
 /**
  * Main de prueba del expendedor
