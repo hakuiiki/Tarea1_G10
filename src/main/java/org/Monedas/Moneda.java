@@ -3,7 +3,6 @@ package org.Monedas;
 /**
  * Clase abstracta que busca representar el molde para monedas genericas
  */
-
 public abstract class Moneda implements Comparable<Moneda>{
 
     /** Numero de serie unico para cada Moneda */
@@ -44,5 +43,16 @@ public abstract class Moneda implements Comparable<Moneda>{
     @Override
     public int compareTo(Moneda comparar){
         return Integer.compare(this.getValor(), comparar.getValor());
+    }
+
+    /**
+     * Retorna un String representativo de la moneda,
+     * con los valores de la serie y el valor de la moneda
+     *
+     * @return una cadena con serie y valor de la moneda
+     */
+    @Override
+    public String toString(){
+        return "Serie: " + serie +",Valor: " + getValor();
     }
 }
