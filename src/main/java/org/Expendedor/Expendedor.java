@@ -44,14 +44,32 @@ public class Expendedor {
     }
 
     /**
-     * Metodo para comprar productos, recibe una moneda y el producto que se desee comprar,
+     * Metodo para comprar productos, recibe una moneda y el numero del producto que se desee comprar,
      * luego analiza cada caso posible y devuelve lo correspondiente en cada uno.
      * Tambien calcula el vuelto si corresponde.
      * @param mon1 moneda con la que se compra el producto
-     * @param producto producto que se desee comprar
+     * @param numeroProducto numero del producto que se desee comprar
      * @return el producto comprado o null si no se pudo realizar la compra
      */
-    public Producto comprarProducto(Moneda mon1, OpcProducto producto) {
+    public Producto comprarProducto(Moneda mon1, int numeroProducto) {
+
+        /* Convierte el numero al enum del producto deseado*/
+        OpcProducto producto = null;
+        if ( numeroProducto == OpcProducto.COCA_COLA.getTag()){
+            producto = OpcProducto.COCA_COLA;
+        }
+        if ( numeroProducto == OpcProducto.SPRITE.getTag()){
+            producto = OpcProducto.SPRITE;
+        }
+        if ( numeroProducto == OpcProducto.FANTA.getTag()){
+            producto = OpcProducto.FANTA;
+        }
+        if ( numeroProducto == OpcProducto.SUPER8.getTag()){
+            producto = OpcProducto.SUPER8;
+        }
+        if ( numeroProducto == OpcProducto.SNICKERS.getTag()){
+            producto = OpcProducto.SNICKERS;
+        }
 
         /* Verificar que la moneda y el producto no sean nulos */
         if (mon1 == null || producto == null) {
@@ -64,28 +82,23 @@ public class Expendedor {
             return null;
         }
 
+        /* Otorga el producto deseado */
         Producto productoAComprar = null;
-
         if (producto == OpcProducto.COCA_COLA) {
             productoAComprar = coca.get();
         }
-
         if (producto == OpcProducto.SPRITE) {
             productoAComprar = sprite.get();
         }
-
         if (producto == OpcProducto.FANTA) {
             productoAComprar = fanta.get();
         }
-
         if (producto == OpcProducto.SUPER8) {
             productoAComprar = super8.get();
         }
-
         if (producto == OpcProducto.SNICKERS) {
             productoAComprar = snickers.get();
         }
-
         if (productoAComprar == null) {
             monVu.add(mon1);
             return null;
@@ -103,7 +116,7 @@ public class Expendedor {
 
     /**
      * Getter del vuelto
-     * @return saca una moneda del deposito del vuelto
+     * @return una moneda del deposito del vuelto
      */
     public Moneda getVuelto(){
             return monVu.get();

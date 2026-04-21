@@ -19,10 +19,10 @@ public class Comprador {
      * Realiza los calculos del sabor si es valido y calcula el vuelto sacando
      * las monedas del Expendedor.
      * @param m la moneda utilizada para comprar
-     * @param producto el producto que se desea comprar
+     * @param numeroProducto numero del producto que se desea comprar
      * @param exp el expendedor en que se desea comprar
      */
-    public Comprador(Moneda m, OpcProducto producto, Expendedor exp) {
+    public Comprador(Moneda m, int numeroProducto, Expendedor exp) {
         this.exp = exp;
 
         /* si no hay moneda no hace nada*/
@@ -33,7 +33,7 @@ public class Comprador {
         }
 
         /* compra el producto y calcula el vuelto*/
-        Producto prod1 = exp.comprarProducto(m, producto);
+        Producto prod1 = exp.comprarProducto(m, numeroProducto);
         Moneda mon;
 
         if (prod1 != null) {
