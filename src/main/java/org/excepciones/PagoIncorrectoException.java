@@ -5,7 +5,7 @@ package org.excepciones;
  */
 public class PagoIncorrectoException extends Exception {
 
-    public PagoIncorrectoException() {
-        super("Pago incorrecto: moneda nula");
+    public PagoIncorrectoException(String mensaje) {
+        super(mensaje);
     }
 }

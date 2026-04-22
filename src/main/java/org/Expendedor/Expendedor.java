@@ -3,6 +3,7 @@ import org.Monedas.*;
 import org.productos.*;
 import org.deposito.*;
 import org.utils.OpcProducto;
+import org.excepciones.*;
 
 /**
  * Clase que permite llenar el expendedor de productos, comprarlos y calcular el vuelto.
@@ -49,9 +50,13 @@ public class Expendedor {
      * Tambien calcula el vuelto si corresponde.
      * @param mon1 moneda con la que se compra el producto
      * @param numeroProducto numero del producto que se desee comprar
-     * @return el producto comprado o null si no se pudo realizar la compra
+     * @return el producto comprado
+     * @throws PagoIncorrectoException si la moneda es nula
+     * @throws PagoInsuficienteException si el dinero es insuficiente
+     * @throws NoHayProductoException si el producto no existe o no hay stock
      */
-    public Producto comprarProducto(Moneda mon1, int numeroProducto) {
+    public Producto comprarProducto(Moneda mon1, int numeroProducto)
+            throws PagoIncorrectoException, PagoInsuficienteException, NoHayProductoException {
 
         /* Convierte el numero al enum del producto deseado*/
         OpcProducto producto = null;
@@ -72,14 +77,18 @@ public class Expendedor {
         }
 
         /* Verificar que la moneda y el producto no sean nulos */
-        if (mon1 == null || producto == null) {
-            return null;
+        if (mon1 == null) {
+            throw new PagoIncorrectoException("No se ingreso moneda");
+        }
+
+        if (producto == null) {
+            throw new NoHayProductoException("Selección de producto inválida");
         }
 
         /* Verificar que la moneda cubre el precio del producto */
         if (mon1.getValor() < producto.getPrecio()) {
             monVu.add(mon1);
-            return null;
+            throw new PagoInsuficienteException("Dinero insuficiente para comprar el producto");
         }
 
         /* Otorga el producto deseado */
@@ -101,7 +110,7 @@ public class Expendedor {
         }
         if (productoAComprar == null) {
             monVu.add(mon1);
-            return null;
+            throw new NoHayProductoException("No hay stock del producto");
         }
 
         /* Calculo de vuelto */

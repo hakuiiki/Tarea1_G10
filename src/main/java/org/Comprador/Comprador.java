@@ -25,19 +25,19 @@ public class Comprador {
     public Comprador(Moneda m, int numeroProducto, Expendedor exp) {
         this.exp = exp;
 
-        /* si no hay moneda no hace nada*/
-        if (m == null) {
-            sabor = null;
-            vuelto = 0;
-            return;
-        }
-
         /* compra el producto y calcula el vuelto*/
-        Producto prod1 = exp.comprarProducto(m, numeroProducto);
+        Producto prod1 = null;
         Moneda mon;
 
-        if (prod1 != null) {
-            sabor = prod1.consumir();
+        try {
+            prod1 = exp.comprarProducto(m, numeroProducto);
+
+            if (prod1 != null) {
+                sabor = prod1.consumir();
+            }
+
+        } catch (Exception e) {
+            sabor = e.getMessage(); // guardas el error como resultado
         }
 
         while ((mon = exp.getVuelto()) != null) {

@@ -5,7 +5,7 @@ package org.excepciones;
  */
 public class PagoInsuficienteException extends Exception {
 
-    public PagoInsuficienteException() {
-        super("Pago insuficiente: dinero insuficiente");
+    public PagoInsuficienteException(String mensaje) {
+        super(mensaje);
     }
 }
