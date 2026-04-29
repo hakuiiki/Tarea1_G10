@@ -37,7 +37,7 @@ public class Comprador {
             }
 
         } catch (Exception e) {
-            sabor = e.getMessage(); // guardas el error como resultado
+            sabor = e.getMessage();
         }
 
         while ((mon = exp.getVuelto()) != null) {
@@ -46,7 +46,7 @@ public class Comprador {
     }
 
     /**
-     * Getter del sabor.
+     * Getter del sabor del producto consumido.
      * @return el sabor en String
      */
     public String queConsumiste() {
@@ -54,7 +54,7 @@ public class Comprador {
     }
 
     /**
-     * Getter del vuelto.
+     * Getter del vuelto a recibir.
      * @return el vuelto en int
      */
     public int cuantoVuelto(){

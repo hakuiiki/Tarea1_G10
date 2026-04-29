@@ -1,24 +1,24 @@
-package org.Monedas;
-
-/**
- * Clase que representa una moneda con valor de 500
- */
-public class Moneda500 extends Moneda{
+    package org.Monedas;
 
     /**
-     * Constructor de Moneda de 500
-     * Inicializa la Moneda usando el constructor de la superclase
+     * Clase que representa una moneda con valor de 500
      */
-    public Moneda500(){
-        super();
-    }
+    public class Moneda500 extends Moneda{
 
-    /**
-     * Getter del valor de la Moneda
-     * @return valor en int
-     */
-    @Override
-    public int getValor() {
-        return 500;
+        /**
+         * Constructor de Moneda de 500
+         * Inicializa la Moneda usando el constructor de la superclase
+         */
+        public Moneda500(){
+            super();
+        }
+
+        /**
+         * Getter del valor de la Moneda
+         * @return valor en int
+         */
+        @Override
+        public int getValor() {
+            return 500;
+        }
     }
-}
